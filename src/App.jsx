@@ -4,6 +4,7 @@ import Home from "./pages/Home";
 import { Routes, Route } from "react-router-dom";
 import { RecipeProvider } from "./contexts/RecipeContext";
 import NavBar from "./components/NavBar";
+import RecipeDetail from './pages/RecipeDetail'; 
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/favorites" element={<Favorites />} />
+          <Route path="/recipe/:id" element={<RecipeDetail />} />
         </Routes>
       </main>
     </RecipeProvider>

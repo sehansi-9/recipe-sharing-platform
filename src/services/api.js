@@ -13,3 +13,13 @@ export const getRecipes = async () => {
     return data.recipes; 
   };
   
+
+  export const getRecipeById = async (id) => {
+    const response = await fetch(`https://dummyjson.com/recipes/${id}`);
+    if (!response.ok) {
+      throw new Error('Recipe not found');
+    }
+    const data = await response.json();
+    return data;
+  };
+  

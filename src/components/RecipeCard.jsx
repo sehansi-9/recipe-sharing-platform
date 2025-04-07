@@ -1,5 +1,6 @@
 import "../css/RecipeCard.css";
 import { useRecipeContext } from "../contexts/RecipeContext";
+import { Link } from "react-router-dom";
 
 function RecipeCard({ recipe }) {
   const { isFavorite, addToFavorites, removeFromFavorites } = useRecipeContext();
@@ -12,6 +13,7 @@ function RecipeCard({ recipe }) {
   }
 
   return (
+    <Link to={`/recipe/${recipe.id}`} className="recipe-card">
     <div className="recipe-card">
       <div className="recipe-poster">
         <img src={recipe.image} alt={recipe.name} />
@@ -27,6 +29,7 @@ function RecipeCard({ recipe }) {
         <p>Rating: {recipe.rating} ⭐</p>
       </div>
     </div>
+    </Link>
   );
 }
 
