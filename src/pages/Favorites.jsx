@@ -5,23 +5,24 @@ import RecipeCard from "../components/RecipeCard";
 function Favorites() {
   const { favorites } = useRecipeContext();
 
-  if (favorites) {
+  // Check if favorites is null or an empty array
+  if (!favorites || favorites.length === 0) {
     return (
-      <div className="favorites">
-        <h2>Your Favorites</h2>
-        <div className="recipe-grid">
-          {favorites.map((recipe) => (
-            <RecipeCard recipe={recipe} key={recipe.id} />
-          ))}
-        </div>
+      <div>
+        <h2>No Favorite Recipes Yet</h2>
+        <p>Start adding recipes to your favorites and they will appear here!</p>
       </div>
     );
   }
 
   return (
-    <div className="favorites-empty">
-      <h2>No Favorite Recipes Yet</h2>
-      <p>Start adding recipes to your favorites and they will appear here!</p>
+    <div className="favorites">
+      <h2>Your Favorites</h2>
+      <div className="recipe-grid">
+        {favorites.map((recipe) => (
+          <RecipeCard recipe={recipe} key={recipe.id} />
+        ))}
+      </div>
     </div>
   );
 }
