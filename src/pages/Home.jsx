@@ -1,7 +1,7 @@
 import RecipeCard from "../components/RecipeCard";
 import { useState, useEffect } from "react";
 import { searchRecipes, getRecipes } from "../services/api";
-
+import "../css/Home.css";
 
 function Home() {
   const [searchQuery, setSearchQuery] = useState("");
