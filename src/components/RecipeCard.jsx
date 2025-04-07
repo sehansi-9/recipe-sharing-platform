@@ -1,9 +1,14 @@
 import "../css/RecipeCard.css";
+import { useRecipeContext } from "../contexts/RecipeContext";
+
 function RecipeCard({ recipe }) {
- 
+  const { isFavorite, addToFavorites, removeFromFavorites } = useRecipeContext();
+  const favorite = isFavorite(recipe.id);
 
   function onFavoriteClick(e) {
-   
+    e.preventDefault();
+    if (favorite) removeFromFavorites(recipe.id);
+    else addToFavorites(recipe);
   }
 
   return (
