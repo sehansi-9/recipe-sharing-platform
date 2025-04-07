@@ -1,3 +1,4 @@
+import "../css/Favorites.css";
 import { useRecipeContext } from "../contexts/RecipeContext";
 import RecipeCard from "../components/RecipeCard";
 
