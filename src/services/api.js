@@ -22,4 +22,15 @@ export const getRecipes = async () => {
     const data = await response.json();
     return data;
   };
+
+  export const getRecipeByTag = async (tag) => {
+    const response = await fetch(`https://dummyjson.com/recipes/tag/${tag}`);
+    if (!response.ok) {
+      throw new Error('Recipe not found');
+    }
+    const data = await response.json();
+    return data;
+  };
+
+
   
