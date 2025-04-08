@@ -1,10 +1,12 @@
 import React, { useState } from "react";
 import { Container, Row, Col, Form, Button } from "react-bootstrap";
 import { useAuth } from "../contexts/AuthContext"; 
+import { useNavigate } from "react-router-dom";
 
 function AuthPage() {
   const [isLogin, setIsLogin] = useState(true);
-  const { login } = useAuth(); // Access the login function from context
+  const { login, currentUser } = useAuth(); // Access the login function from context and currentUser
+  const navigate = useNavigate(); // Hook to programmatically navigate
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -13,14 +15,34 @@ function AuthPage() {
     const password = e.target.password.value;
     let userData = { email, password };
 
+    // Validation for Login and Sign-Up
+    if (!email || !password) {
+      alert("Please fill in both email and password.");
+      return;
+    }
+
+    if (!isLogin && !e.target.fullName?.value) {
+      alert("Please enter your full name.");
+      return;
+    }
+
+    // For Sign-Up, include full name
     if (!isLogin) {
-      const fullName = e.target.fullName?.value; // Only for Sign Up
+      const fullName = e.target.fullName.value;
       userData = { ...userData, fullName };
     }
 
-    // Save user details in localStorage via context
+    // Save user details in localStorage via context and log in the user
     login(userData);
+
+    
+    navigate("/"); 
   };
+
+  if (currentUser) {
+    navigate("/"); // Redirect to home page immediately
+    return null; // Prevent rendering of the form when logged in
+  }
 
   return (
     <Container fluid className="vh-100 d-flex align-items-center bg-dark">

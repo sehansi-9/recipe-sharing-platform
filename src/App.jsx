@@ -17,13 +17,23 @@ function App() {
           <Routes>
             <Route path="/" element={<PrivateRoute><Home /></PrivateRoute>} />
             <Route path="/favorites" element={<PrivateRoute><Favorites /></PrivateRoute>} />
-            <Route path="/login" element={<AuthPage />} />
+            <Route path="/login" element={<AuthRedirect />}/>
             <Route path="/recipe/:id" element={<PrivateRoute><RecipeDetail /></PrivateRoute>} />
           </Routes>
         </main>
       </RecipeProvider>
     </AuthProvider>
   );
+}
+
+// AuthRedirect component to redirect if the user is already logged in
+function AuthRedirect() {
+  const { user } = useAuth();
+  if (user) {
+    return <Navigate to="/" />;
+  }
+  // If not logged in, show the login page
+  return <AuthPage />;
 }
 
 // PrivateRoute component to protect routes

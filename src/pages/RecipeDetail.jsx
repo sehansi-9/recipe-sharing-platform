@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { getRecipeById } from "../services/api";
-import { useRecipeContext } from "../contexts/RecipeContext";
+import { useRecipeContext } from "../contexts/FavouriteContext";
 import "../css/RecipeDetail.css";
 
 function RecipeDetail() {
