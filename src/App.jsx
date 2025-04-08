@@ -7,7 +7,7 @@ import NavBar from "./components/NavBar";
 import RecipeDetail from './pages/RecipeDetail'; 
 import AuthPage from "./pages/Login";
 import { AuthProvider, useAuth } from "./contexts/AuthContext";
-import AddRecipe from "./pages/AddRecipe";
+import AddRecipe from "./pages/RecipeForm";
 
 function App() {
   return (
