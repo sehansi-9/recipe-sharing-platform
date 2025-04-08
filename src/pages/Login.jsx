@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Container, Row, Col, Form, Button } from "react-bootstrap";
-import { useAuth } from "../contexts/AuthContext"; 
+import { useAuth } from "../contexts/AuthContext";
 import { useNavigate } from "react-router-dom";
 
 function AuthPage() {
@@ -11,31 +11,32 @@ function AuthPage() {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    const email = e.target.email.value;
+    const username = e.target.username.value; // Get username instead of email
     const password = e.target.password.value;
-    let userData = { email, password };
+    let userData = { username, password };
 
     // Validation for Login and Sign-Up
-    if (!email || !password) {
-      alert("Please fill in both email and password.");
+    if (!username || !password) {
+      alert("Please fill in both username and password.");
       return;
     }
 
-    if (!isLogin && !e.target.fullName?.value) {
-      alert("Please enter your full name.");
+    // For Sign-Up, include username
+    if (!isLogin && !e.target.username?.value) {
+      alert("Please enter your username.");
       return;
     }
 
-    // For Sign-Up, include full name
+    // For Sign-Up, include username
     if (!isLogin) {
-      const fullName = e.target.fullName.value;
-      userData = { ...userData, fullName };
+      const username = e.target.username.value;
+      userData = { ...userData, username };
     }
 
     // Save user details in localStorage via context and log in the user
-    login(userData);
+    localStorage.setItem("user", JSON.stringify(userData)); // Store username and password in localStorage
+    login(userData); // Pass the user data to the login function
 
-    
     navigate("/"); 
   };
 
@@ -51,16 +52,17 @@ function AuthPage() {
         <Col md={6} className="d-flex flex-column justify-content-center px-5">
           <h2 className="mb-4 text-white">{isLogin ? "Login" : "Sign Up"}</h2>
           <Form onSubmit={handleSubmit}>
+            
+            <Form.Group className="mb-3">
+              <Form.Label className="text-white">Username</Form.Label>
+              <Form.Control type="text" name="username" placeholder="Enter username" />
+            </Form.Group>
             {!isLogin && (
               <Form.Group className="mb-3">
-                <Form.Label className="text-white">Full Name</Form.Label>
-                <Form.Control type="text" name="fullName" placeholder="Enter your name" />
+                <Form.Label className="text-white">Email</Form.Label>
+                <Form.Control type="text" name="email" placeholder="Enter your email" />
               </Form.Group>
             )}
-            <Form.Group className="mb-3">
-              <Form.Label className="text-white">Email address</Form.Label>
-              <Form.Control type="email" name="email" placeholder="Enter email" />
-            </Form.Group>
 
             <Form.Group className="mb-3">
               <Form.Label className="text-white">Password</Form.Label>

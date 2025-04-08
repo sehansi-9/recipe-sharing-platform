@@ -7,6 +7,7 @@ import NavBar from "./components/NavBar";
 import RecipeDetail from './pages/RecipeDetail'; 
 import AuthPage from "./pages/Login";
 import { AuthProvider, useAuth } from "./contexts/AuthContext";
+import AddRecipe from "./pages/AddRecipe";
 
 function App() {
   return (
@@ -18,7 +19,9 @@ function App() {
             <Route path="/" element={<PrivateRoute><Home /></PrivateRoute>} />
             <Route path="/favorites" element={<PrivateRoute><Favorites /></PrivateRoute>} />
             <Route path="/login" element={<AuthRedirect />}/>
+            <Route path="/add" element={<AddRecipe />}/>
             <Route path="/recipe/:id" element={<PrivateRoute><RecipeDetail /></PrivateRoute>} />
+
           </Routes>
         </main>
       </RecipeProvider>
