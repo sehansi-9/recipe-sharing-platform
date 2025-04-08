@@ -1,5 +1,5 @@
 import "../css/Favorites.css";
-import { useRecipeContext } from "../contexts/RecipeContext";
+import { useRecipeContext } from "../contexts/FavouriteContext";
 import RecipeCard from "../components/RecipeCard";
 
 function Favorites() {

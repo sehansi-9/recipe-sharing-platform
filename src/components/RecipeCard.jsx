@@ -1,5 +1,5 @@
 import "../css/RecipeCard.css";
-import { useRecipeContext } from "../contexts/RecipeContext";
+import { useRecipeContext } from "../contexts/FavouriteContext";
 import { Link } from "react-router-dom";
 
 function RecipeCard({ recipe }) {

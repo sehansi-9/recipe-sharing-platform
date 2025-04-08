@@ -1,8 +1,26 @@
 import React, { useState } from "react";
 import { Container, Row, Col, Form, Button } from "react-bootstrap";
+import { useAuth } from "../contexts/AuthContext"; 
 
 function AuthPage() {
   const [isLogin, setIsLogin] = useState(true);
+  const { login } = useAuth(); // Access the login function from context
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    const email = e.target.email.value;
+    const password = e.target.password.value;
+    let userData = { email, password };
+
+    if (!isLogin) {
+      const fullName = e.target.fullName?.value; // Only for Sign Up
+      userData = { ...userData, fullName };
+    }
+
+    // Save user details in localStorage via context
+    login(userData);
+  };
 
   return (
     <Container fluid className="vh-100 d-flex align-items-center bg-dark">
@@ -10,21 +28,21 @@ function AuthPage() {
         {/* Form Section */}
         <Col md={6} className="d-flex flex-column justify-content-center px-5">
           <h2 className="mb-4 text-white">{isLogin ? "Login" : "Sign Up"}</h2>
-          <Form>
+          <Form onSubmit={handleSubmit}>
             {!isLogin && (
               <Form.Group className="mb-3">
                 <Form.Label className="text-white">Full Name</Form.Label>
-                <Form.Control type="text" placeholder="Enter your name" />
+                <Form.Control type="text" name="fullName" placeholder="Enter your name" />
               </Form.Group>
             )}
             <Form.Group className="mb-3">
               <Form.Label className="text-white">Email address</Form.Label>
-              <Form.Control type="email" placeholder="Enter email" />
+              <Form.Control type="email" name="email" placeholder="Enter email" />
             </Form.Group>
 
             <Form.Group className="mb-3">
               <Form.Label className="text-white">Password</Form.Label>
-              <Form.Control type="password" placeholder="Password" />
+              <Form.Control type="password" name="password" placeholder="Password" />
             </Form.Group>
 
             <Button variant="dark" type="submit" className="w-100 text-white">
