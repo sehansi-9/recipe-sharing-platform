@@ -42,7 +42,7 @@ Welcome to **Recipe Hub** – the ultimate recipe app that brings you a world of
 ![Adding a new recipe](https://github.com/user-attachments/assets/b63744af-7031-453f-9421-6240fbd3a01c)
 ### Added Recipes that are editable
 ![Added Recipes that are editable](https://github.com/user-attachments/assets/529292f9-6e6a-40a7-a08e-cdf78409eee3)
-## Sign up mock-up
+### Sign up mock-up
 ![Sign up mock-up](https://github.com/user-attachments/assets/af213a21-42c7-46fc-b8de-8d595a9ff8af)
 
 ---
