@@ -37,7 +37,7 @@ function MyRecipes() {
     <div className="favorites">
       <h2>My Recipes</h2>
       <div style={{ textAlign: "center", marginBottom: "20px" }}>
-        <button className="btn add" onClick={handleAddRecipe}>
+        <button className="btn btn-light" onClick={handleAddRecipe}>
           + Add New Recipe
         </button>
       </div>
