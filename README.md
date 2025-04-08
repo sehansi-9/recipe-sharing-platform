@@ -39,7 +39,7 @@ Welcome to **Recipe Hub** – the ultimate recipe app that brings you a world of
 - **React Router**: For seamless navigation between pages.
 - **Context API**: To manage global state for user data and favorite recipes.
 - **LocalStorage**: To persist user data and preferences.
-- **Mock JSON API**: For fetching recipe data.
+- **Mock JSON API**: For fetching recipe data. <https://dummyjson.com/docs/recipes>
 - **CSS**: For custom styling and making the app visually appealing.
 
 ---
