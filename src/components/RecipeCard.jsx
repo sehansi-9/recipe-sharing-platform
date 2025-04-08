@@ -24,7 +24,7 @@ function RecipeCard({ recipe }) {
         </div>
       </div>
       <div className="recipe-info">
-        <h3>{recipe.name}</h3>
+        <h3 className="recipe-name">{recipe.name}</h3>
         <p>Cooking Time: {recipe.cookTimeMinutes} mins</p>
         <p>Rating: {recipe.rating} ⭐</p>
       </div>

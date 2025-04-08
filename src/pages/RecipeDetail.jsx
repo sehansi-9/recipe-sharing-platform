@@ -91,8 +91,8 @@ function RecipeDetail() {
               </div>
             </div>
             <div className="recipe-info">
-            <h3>Cooking Time: {recipe.cookTimeMinutes} mins</h3>
-              <h3>Rating: {recipe.rating} ⭐</h3>
+            <h3 className="recipe-facts" >Cooking Time: {recipe.cookTimeMinutes} mins</h3>
+              <h3 className="recipe-facts">Rating: {recipe.rating} ⭐</h3>
             </div>
           </div>
 

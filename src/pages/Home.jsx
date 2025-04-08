@@ -10,7 +10,6 @@ function Home() {
   const [loading, setLoading] = useState(true);
   const [selectedTag, setSelectedTag] = useState(""); 
 
-
   const loadAllRecipes = async () => {
     setLoading(true);
     try {
@@ -85,10 +84,10 @@ function Home() {
       </form>
 
       <div className="tag-buttons">
-      <button onClick={loadAllRecipes}>All</button>
-      <button onClick={() => handleTagClick("Chicken")}>Chicken</button>
-      <button onClick={() => handleTagClick("Beef")}>Beef</button>
-       <button onClick={() => handleTagClick("Vegetarian")}>Vegetarian</button>
+       <button className="tag-button" onClick={loadAllRecipes}>All</button>
+       <button className="tag-button" onClick={() => handleTagClick("Chicken")}>Chicken</button>
+      <button className="tag-button" onClick={() => handleTagClick("Beef")}>Beef</button>
+       <button className="tag-button" onClick={() => handleTagClick("Vegetarian")}>Vegetarian</button>
      
        
       </div>

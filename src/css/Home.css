@@ -69,3 +69,6 @@
   justify-content: center; 
   margin: 20px 0;
 }
+.tag-button {
+ border-radius: 10px;
+}

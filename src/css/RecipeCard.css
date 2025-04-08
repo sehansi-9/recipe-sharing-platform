@@ -48,6 +48,9 @@
   .recipe-card:hover .recipe-overlay {
     opacity: 1;
   }
+  .recipe-name{
+    color: rgba(255, 255, 255, 0.87);
+  }
   
   .favorite-btn {
     position: absolute;
@@ -122,4 +125,12 @@
       height: 32px;
       font-size: 1.2rem;
     }
+  }
+  .recipe-card {
+    text-decoration: none;
+    color: inherit; 
+  }
+  
+  .recipe-card * {
+    text-decoration: none;
   }

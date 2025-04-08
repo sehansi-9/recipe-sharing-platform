@@ -9,7 +9,7 @@ function Favorites() {
   if (!favorites || favorites.length === 0) {
     return (
       <div>
-        <h2>No Favorite Recipes Yet</h2>
+        <p>No Favorite Recipes Yet</p>
         <p>Start adding recipes to your favorites and they will appear here!</p>
       </div>
     );
