@@ -3,17 +3,6 @@
 Welcome to **Recipe Hub** – the ultimate recipe app that brings you a world of culinary delights! With an easy-to-use interface, you can browse, filter, and favorite your favorite recipes, and even share them with your friends! Whether you're a seasoned chef or just getting started in the kitchen, Recipe Hub has everything you need. 🌟
 
 ---
-## Home Page with search bar
-![Home Page with search bar](https://github.com/user-attachments/assets/2cdece7b-5eb8-4053-8065-f1d58f6bb7be)
-## Detailed Recipe Page
-![Detailed Recipe Page](https://github.com/user-attachments/assets/416fdf21-a249-40fb-8ff3-b176dd01c647)
-## Adding a new recipe
-![Adding a new recipe](https://github.com/user-attachments/assets/b63744af-7031-453f-9421-6240fbd3a01c)
-## Added Recipes that are editable
-![Added Recipes that are editable](https://github.com/user-attachments/assets/529292f9-6e6a-40a7-a08e-cdf78409eee3)
-## Sign up mock-up
-![Sign up mock-up](https://github.com/user-attachments/assets/f193b290-e0ec-4bef-9ace-57b9844557c4)
-
 
 ## Features 🚀
 
@@ -41,6 +30,20 @@ Welcome to **Recipe Hub** – the ultimate recipe app that brings you a world of
 - **LocalStorage**: To persist user data and preferences.
 - **Mock JSON API**: For fetching recipe data. <https://dummyjson.com/docs/recipes>
 - **CSS**: For custom styling and making the app visually appealing.
+
+---
+## Screenshots 📸
+
+### Home Page with search bar
+![Home Page with search bar](https://github.com/user-attachments/assets/2cdece7b-5eb8-4053-8065-f1d58f6bb7be)
+### Detailed Recipe Page
+![Detailed Recipe Page](https://github.com/user-attachments/assets/416fdf21-a249-40fb-8ff3-b176dd01c647)
+### Adding a new recipe
+![Adding a new recipe](https://github.com/user-attachments/assets/b63744af-7031-453f-9421-6240fbd3a01c)
+### Added Recipes that are editable
+![Added Recipes that are editable](https://github.com/user-attachments/assets/529292f9-6e6a-40a7-a08e-cdf78409eee3)
+## Sign up mock-up
+![Sign up mock-up](https://github.com/user-attachments/assets/af213a21-42c7-46fc-b8de-8d595a9ff8af)
 
 ---
 
@@ -72,4 +75,5 @@ Welcome to **Recipe Hub** – the ultimate recipe app that brings you a world of
    ```bash
    npm run dev
    ```
+ ---
 Now, you can open your browser and visit localhost to check out the Recipe Hub! 🎉
