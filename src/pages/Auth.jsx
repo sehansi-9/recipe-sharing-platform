@@ -5,13 +5,13 @@ import { useNavigate } from "react-router-dom";
 
 function AuthPage() {
   const [isLogin, setIsLogin] = useState(true);
-  const { login, currentUser } = useAuth(); // Access the login function from context and currentUser
-  const navigate = useNavigate(); // Hook to programmatically navigate
+  const { login, currentUser } = useAuth(); 
+  const navigate = useNavigate(); 
 
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    const username = e.target.username.value; // Get username instead of email
+    const username = e.target.username.value; 
     const password = e.target.password.value;
     let userData = { username, password };
 
@@ -21,19 +21,7 @@ function AuthPage() {
       return;
     }
 
-    // For Sign-Up, include username
-    if (!isLogin && !e.target.username?.value) {
-      alert("Please enter your username.");
-      return;
-    }
-
-    // For Sign-Up, include username
-    if (!isLogin) {
-      const username = e.target.username.value;
-      userData = { ...userData, username };
-    }
-
-    // Save user details in localStorage via context and log in the user
+    
     localStorage.setItem("user", JSON.stringify(userData)); // Store username and password in localStorage
     login(userData); // Pass the user data to the login function
 

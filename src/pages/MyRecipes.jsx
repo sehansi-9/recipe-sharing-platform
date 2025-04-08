@@ -1,4 +1,3 @@
-// pages/MyRecipes.js
 import "../css/Favorites.css";
 import { useNavigate } from "react-router-dom";
 import { useMyRecipes } from "../contexts/MyRecipesContext";

@@ -134,7 +134,7 @@ function RecipeDetail() {
             )}
 
             <h2>Instructions</h2>
-            {/* Check if instructions is an array or a string */}
+           
             {Array.isArray(recipe.instructions) ? (
               <ul>
                 {recipe.instructions.map((instruction, index) => (
@@ -142,7 +142,7 @@ function RecipeDetail() {
                 ))}
               </ul>
             ) : (
-              <p>{recipe.instructions}</p> // Display as paragraph if it's a string
+              <p>{recipe.instructions}</p> 
             )}
 
             <div className="social-share">

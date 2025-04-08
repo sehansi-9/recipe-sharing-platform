@@ -7,7 +7,7 @@ const RecipeForm = () => {
     const [ingredients, setIngredients] = useState('');
     const [instructions, setInstructions] = useState('');
     const [image, setImage] = useState(''); 
-    const [cookTimeMinutes, setCookTimeMinutes] = useState('');  // Changed state to cookTimeMinutes
+    const [cookTimeMinutes, setCookTimeMinutes] = useState('');  
     const navigate = useNavigate();
     const { id } = useParams();
     const { addMyRecipe, updateMyRecipe, myRecipes } = useMyRecipes();
@@ -20,7 +20,7 @@ const RecipeForm = () => {
                 setIngredients(recipeToEdit.ingredients);
                 setInstructions(recipeToEdit.instructions);
                 setImage(recipeToEdit.image);
-                setCookTimeMinutes(recipeToEdit.cookTimeMinutes);  // Initialize cookTimeMinutes if editing
+                setCookTimeMinutes(recipeToEdit.cookTimeMinutes); 
             }
         }
     }, [id, myRecipes]);
@@ -36,7 +36,7 @@ const RecipeForm = () => {
             ingredients,
             instructions,
             image,
-            cookTimeMinutes,  // Changed to cookTimeMinutes
+            cookTimeMinutes, 
         };
     
         if (id) {
@@ -90,13 +90,13 @@ const RecipeForm = () => {
                             </div>
 
                             <div className="form-group mb-2">
-                                <label className="form-label">Cooking Time (in minutes)</label> {/* Updated label */}
+                                <label className="form-label">Cooking Time (in minutes)</label> 
                                 <input
                                     type="number"
                                     placeholder="Enter cooking time"
                                     value={cookTimeMinutes}
                                     className="form-control bg-dark text-light border-light"
-                                    onChange={(event) => setCookTimeMinutes(event.target.value)}  // Updated event handler
+                                    onChange={(event) => setCookTimeMinutes(event.target.value)}  
                                 />
                             </div>
 

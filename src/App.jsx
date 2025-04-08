@@ -5,7 +5,7 @@ import { Routes, Route, Navigate } from "react-router-dom";
 import { RecipeProvider } from "./contexts/FavouriteContext";
 import NavBar from "./components/NavBar";
 import RecipeDetail from './pages/RecipeDetail'; 
-import AuthPage from "./pages/Login";
+import AuthPage from "./pages/Auth";
 import { AuthProvider, useAuth } from "./contexts/AuthContext";
 import RecipeForm from "./pages/RecipeForm";
 import { MyRecipesProvider } from "./contexts/MyRecipesContext";
@@ -24,7 +24,7 @@ function App() {
             <Route path="/add" element={<PrivateRoute><RecipeForm /></PrivateRoute>} />
             <Route path="/update/:id" element={<PrivateRoute><RecipeForm /></PrivateRoute>} />
             <Route path="/profile" element={<PrivateRoute><MyRecipes /></PrivateRoute>} />
-            <Route path="/login" element={<AuthRedirect />}/>
+            <Route path="/auth" element={<AuthRedirect />}/>
             <Route path="/recipe/:id" element={<PrivateRoute><RecipeDetail /></PrivateRoute>} />
 
           </Routes>
@@ -50,7 +50,7 @@ function PrivateRoute({ children }) {
   const { user } = useAuth();
   if (!user) {
     // Redirect to login if user is not authenticated
-    return <Navigate to="/login" />;
+    return <Navigate to="/auth" />;
   }
   return children; // If authenticated, render the children
 }
