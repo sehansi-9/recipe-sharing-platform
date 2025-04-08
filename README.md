@@ -1,13 +1,18 @@
-# Recipe Hub 🍽️
+# Recipe Hub 🍽️ by Sehansi Perera
 
 Welcome to **Recipe Hub** – the ultimate recipe app that brings you a world of culinary delights! With an easy-to-use interface, you can browse, filter, and favorite your favorite recipes, and even share them with your friends! Whether you're a seasoned chef or just getting started in the kitchen, Recipe Hub has everything you need. 🌟
 
 ---
-![](https://github.com/user-attachments/assets/2cdece7b-5eb8-4053-8065-f1d58f6bb7be)
-![](https://github.com/user-attachments/assets/416fdf21-a249-40fb-8ff3-b176dd01c647)
-![](https://github.com/user-attachments/assets/b63744af-7031-453f-9421-6240fbd3a01c)
-![](https://github.com/user-attachments/assets/529292f9-6e6a-40a7-a08e-cdf78409eee3)
-![](https://github.com/user-attachments/assets/f193b290-e0ec-4bef-9ace-57b9844557c4)
+## Home Page with search bar
+![Home Page with search bar](https://github.com/user-attachments/assets/2cdece7b-5eb8-4053-8065-f1d58f6bb7be)
+## Detailed Recipe Page
+![Detailed Recipe Page](https://github.com/user-attachments/assets/416fdf21-a249-40fb-8ff3-b176dd01c647)
+## Adding a new recipe
+![Adding a new recipe](https://github.com/user-attachments/assets/b63744af-7031-453f-9421-6240fbd3a01c)
+## Added Recipes that are editable
+![Added Recipes that are editable](https://github.com/user-attachments/assets/529292f9-6e6a-40a7-a08e-cdf78409eee3)
+## Sign up mock-up
+![Sign up mock-up](https://github.com/user-attachments/assets/f193b290-e0ec-4bef-9ace-57b9844557c4)
 
 
 ## Features 🚀
