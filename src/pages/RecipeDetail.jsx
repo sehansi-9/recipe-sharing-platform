@@ -16,15 +16,24 @@ function RecipeDetail() {
 
   useEffect(() => {
     const fetchRecipeDetails = async () => {
-      try {
-        const data = await getRecipeById(id);
-        setRecipe(data);
-        setError(null);
-      } catch (err) {
-        console.error(err);
-        setError("Failed to load recipe details...");
-      } finally {
+      // First, check if the recipe is in localStorage or context
+      const storedRecipes = JSON.parse(localStorage.getItem("myRecipes")) || [];
+      const recipeFromStorage = storedRecipes.find((r) => r.id === id);
+
+      if (recipeFromStorage) {
+        setRecipe(recipeFromStorage);
         setLoading(false);
+      } else {
+        try {
+          const data = await getRecipeById(id);
+          setRecipe(data);
+          setError(null);
+        } catch (err) {
+          console.error(err);
+          setError("Failed to load recipe details...");
+        } finally {
+          setLoading(false);
+        }
       }
     };
 
@@ -91,7 +100,9 @@ function RecipeDetail() {
               </div>
             </div>
             <div className="recipe-info">
-            <h3 className="recipe-facts" >Cooking Time: {recipe.cookTimeMinutes} mins</h3>
+              <h3 className="recipe-facts">
+                Cooking Time: {recipe.cookTimeMinutes} mins
+              </h3>
               <h3 className="recipe-facts">Rating: {recipe.rating} ⭐</h3>
             </div>
           </div>
@@ -111,18 +122,29 @@ function RecipeDetail() {
             </div>
 
             <h2>Ingredients</h2>
-            <ul>
-              {recipe.ingredients.map((ingredient, index) => (
-                <li key={index}>{ingredient}</li>
-              ))}
-            </ul>
+            {/* Check if ingredients is an array or a string */}
+            {Array.isArray(recipe.ingredients) ? (
+              <ul>
+                {recipe.ingredients.map((ingredient, index) => (
+                  <li key={index}>{ingredient}</li>
+                ))}
+              </ul>
+            ) : (
+              <p>{recipe.ingredients}</p> // Display as paragraph if it's a string
+            )}
 
             <h2>Instructions</h2>
-            <ul>
-              {recipe.instructions.map((instruction, index) => (
-                <li key={index}>{instruction}</li>
-              ))}
-            </ul>
+            {/* Check if instructions is an array or a string */}
+            {Array.isArray(recipe.instructions) ? (
+              <ul>
+                {recipe.instructions.map((instruction, index) => (
+                  <li key={index}>{instruction}</li>
+                ))}
+              </ul>
+            ) : (
+              <p>{recipe.instructions}</p> // Display as paragraph if it's a string
+            )}
+
             <div className="social-share">
               <p>Share:</p>
               <button

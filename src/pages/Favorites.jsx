@@ -8,9 +8,10 @@ function Favorites() {
   // Check if favorites is null or an empty array
   if (!favorites || favorites.length === 0) {
     return (
-      <div>
-        <p>No Favorite Recipes Yet</p>
-        <p>Start adding recipes to your favorites and they will appear here!</p>
+      <div className="favorites">
+        <h2>My Favourites</h2>
+        
+        <p>No favorites yet, heart recipies to add to your favourites!</p>
       </div>
     );
   }

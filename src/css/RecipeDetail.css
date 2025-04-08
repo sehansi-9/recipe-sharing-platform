@@ -1,203 +1,202 @@
-.recipe-detail-wrapper {
-    display: flex;
-    justify-content: center;
-    padding: 2rem;
-    background-color: #121212;
-    min-height: 100vh;
-    box-sizing: border-box;
-  }
-  
+.recipe-detail-wrapper { 
+  display: flex;
+  justify-content: center;
+  padding: 2rem;
+  background-color: #121212;
+  min-height: 100vh;
+  box-sizing: border-box;
+}
+
+.recipe-detail-inner {
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+  width: 100%;
+  max-width: 1200px;
+  flex-wrap: wrap;
+}
+
+.recipe-left {
+  flex: 1 1 350px;
+  max-width: 400px;
+}
+
+.recipe-right {
+  flex: 2;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  min-height: 500px; /* Set a fixed or min-height here */
+  justify-content: space-between; /* Ensure content is distributed evenly */
+}
+
+.recipe-facts {
+  color: rgba(255, 255, 255, 0.87);
+}
+
+.recipe-right h2 {
+  margin-bottom: 0.5rem;
+  color: #ffcc70;
+}
+
+.recipe-right ul {
+  list-style: disc;
+  padding-left: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.recipe-right p {
+  white-space: pre-line;
+  line-height: 1.6;
+  color: #ccc;
+}
+
+.loading,
+.error-message {
+  color: #fff;
+  text-align: center;
+  font-size: 1.2rem;
+  margin-top: 3rem;
+}
+
+@media (max-width: 768px) {
   .recipe-detail-inner {
-    display: flex;
-    flex-direction: row;
-    gap: 2rem;
-    width: 100%;
-    max-width: 1200px;
-    flex-wrap: wrap;
-  }
-  
-  .recipe-left {
-    flex: 1 1 350px;
-    max-width: 400px;
-  }
-  
-  .recipe-right {
-    flex: 2;
-    color: #fff;
-    display: flex;
     flex-direction: column;
-    gap: 1rem;
-  }
-  .recipe-facts{
-    color: rgba(255, 255, 255, 0.87);
-  }
-  
-  .recipe-right h2 {
-    margin-bottom: 0.5rem;
-    color: #ffcc70;
-  }
-  
-  .recipe-right ul {
-    list-style: disc;
-    padding-left: 1.5rem;
-    margin-bottom: 1rem;
-  }
-  
-  .recipe-right p {
-    white-space: pre-line;
-    line-height: 1.6;
-    color: #ccc;
-  }
-  
-  .loading,
-  .error-message {
-    color: #fff;
-    text-align: center;
-    font-size: 1.2rem;
-    margin-top: 3rem;
-  }
-  
-  @media (max-width: 768px) {
-    .recipe-detail-inner {
-      flex-direction: column;
-    }
-  
-    .recipe-left, .recipe-right {
-      max-width: 100%;
-    }
-  }
-  
-  .recipe-card > h1 {
-    color: #fff;
-    margin-bottom: 2rem; /* adjust this value as needed */
-    font-size: 2rem;
   }
 
-  .social-share {
-    margin-top: 2rem;
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
+  .recipe-left, .recipe-right {
+    max-width: 100%;
   }
-  
-  .social-share p {
-    font-weight: bold;
-    color: #fff;
-    margin-bottom: 0.5rem;
-  }
-  
-  .share-btn {
-    border: none;
-    padding: 0.6rem 1rem;
-    border-radius: 4px;
-    color: white;
-    cursor: pointer;
-    transition: background-color 0.3s;
-    font-weight: bold;
-    width: fit-content;
-  }
-  
-  .share-btn.facebook {
-    background-color: #3b5998;
-  }
-  
-  .share-btn.facebook:hover {
-    background-color: #2d4373;
-  }
-  
-  .share-btn.twitter {
-    background-color: #1da1f2;
-  }
-  
-  .share-btn.twitter:hover {
-    background-color: #0d95e8;
-  }
-  
-  .share-btn.whatsapp {
-    background-color: #25d366;
-  }
-  
-  .share-btn.whatsapp:hover {
-    background-color: #1ebe5d;
-  }
-  .social-share {
-    margin-top: 1.5rem;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    gap: 0.5rem;
-    justify-content: flex-start; /* force to left */
-  }
-  
-  .social-share p {
-    font-weight: bold;
-    color: #fff;
-    margin: 0;
-    margin-right: 0.5rem;
-  }
-  
-  .share-btn {
-    border: none;
-    padding: 0.4rem 0.75rem;
-    border-radius: 4px;
-    color: white;
-    cursor: pointer;
-    transition: background-color 0.3s;
-    font-weight: 500;
-    font-size: 0.85rem;
-  }
-  .timer-wrapper {
-    position: absolute;
-    top: 0;
-    right: 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center; /* This will center the timer above the buttons */
-    gap: 10px;
-    margin: 10px;
-  }
-  
-  .timer-box {
-    background-color: #f1f1f1;
-    padding: 0.3rem 0.3rem;
-    border-radius: 12px 0 0 12px;
-    font-weight: bold;
-    font-size: 1.4rem;
-    color: #333;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-width: 80px;
-    font-family: 'Roboto', sans-serif;
-  }
-  
-  .timer-controls {
-    display: flex;
-    gap: 12px;
-  }
-  
-  
-  .timer-controls button {
-    padding: 6px 12px;
-    font-size: 0.85rem;
-    background-color: #e0e0e0;
-    color: #333;
-    border: 1px solid #ccc;
-    border-radius: 6px;
-    cursor: pointer;
-    font-family: 'Roboto', sans-serif;
-  }
-  
-  .timer-controls button:hover {
-    background-color: #d5d5d5;
-  }
-  
-  .timer-controls button:active {
-    background-color: #8a8787;
-  }
-  
-  
+}
 
-  
-    
+.recipe-card > h1 {
+  color: #fff;
+  margin-bottom: 2rem; /* adjust this value as needed */
+  font-size: 2rem;
+}
+
+.social-share {
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.social-share p {
+  font-weight: bold;
+  color: #fff;
+  margin-bottom: 0.5rem;
+}
+
+.share-btn {
+  border: none;
+  padding: 0.6rem 1rem;
+  border-radius: 4px;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  font-weight: bold;
+  width: fit-content;
+}
+
+.share-btn.facebook {
+  background-color: #3b5998;
+}
+
+.share-btn.facebook:hover {
+  background-color: #2d4373;
+}
+
+.share-btn.twitter {
+  background-color: #1da1f2;
+}
+
+.share-btn.twitter:hover {
+  background-color: #0d95e8;
+}
+
+.share-btn.whatsapp {
+  background-color: #25d366;
+}
+
+.share-btn.whatsapp:hover {
+  background-color: #1ebe5d;
+}
+
+.social-share {
+  margin-top: 1.5rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 0.5rem;
+  justify-content: flex-start; /* force to left */
+}
+
+.social-share p {
+  font-weight: bold;
+  color: #fff;
+  margin: 0;
+  margin-right: 0.5rem;
+}
+
+.share-btn {
+  border: none;
+  padding: 0.4rem 0.75rem;
+  border-radius: 4px;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  font-weight: 500;
+  font-size: 0.85rem;
+}
+
+.timer-wrapper {
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* This will center the timer above the buttons */
+  gap: 10px;
+  margin: 10px;
+}
+
+.timer-box {
+  background-color: #f1f1f1;
+  padding: 0.3rem 0.3rem;
+  border-radius: 12px 0 0 12px;
+  font-weight: bold;
+  font-size: 1.4rem;
+  color: #333;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-width: 80px;
+  font-family: 'Roboto', sans-serif;
+}
+
+.timer-controls {
+  display: flex;
+  gap: 12px;
+}
+
+.timer-controls button {
+  padding: 6px 12px;
+  font-size: 0.85rem;
+  background-color: #e0e0e0;
+  color: #333;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  cursor: pointer;
+  font-family: 'Roboto', sans-serif;
+}
+
+.timer-controls button:hover {
+  background-color: #d5d5d5;
+}
+
+.timer-controls button:active {
+  background-color: #8a8787;
+}

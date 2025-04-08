@@ -1,57 +1,51 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
+import { useMyRecipes } from "../contexts/MyRecipesContext";
 
-const AddRecipe = () => {
-    const [title, setTitle] = useState('');
+const RecipeForm = () => {
+    const [name, setName] = useState(''); 
     const [ingredients, setIngredients] = useState('');
     const [instructions, setInstructions] = useState('');
-    const [imageUrl, setImageUrl] = useState('');
+    const [image, setImage] = useState(''); 
+    const [cookTimeMinutes, setCookTimeMinutes] = useState('');  // Changed state to cookTimeMinutes
     const navigate = useNavigate();
     const { id } = useParams();
+    const { addMyRecipe, updateMyRecipe, myRecipes } = useMyRecipes();
 
-    // Load the recipe from localStorage if the id is provided (for editing)
     useEffect(() => {
         if (id) {
-            const storedRecipes = JSON.parse(localStorage.getItem('recipes')) || [];
-            const recipeToEdit = storedRecipes.find((recipe) => recipe.id === id);
+            const recipeToEdit = myRecipes.find((recipe) => recipe.id === id);
             if (recipeToEdit) {
-                setTitle(recipeToEdit.title);
+                setName(recipeToEdit.name); 
                 setIngredients(recipeToEdit.ingredients);
                 setInstructions(recipeToEdit.instructions);
-                setImageUrl(recipeToEdit.imageUrl);
+                setImage(recipeToEdit.image);
+                setCookTimeMinutes(recipeToEdit.cookTimeMinutes);  // Initialize cookTimeMinutes if editing
             }
         }
-    }, [id]);
+    }, [id, myRecipes]);
 
     const pageTitle = id ? <h2 className="text-center">Update Recipe</h2> : <h2 className="text-center">Add Recipe</h2>;
 
     const handleSubmit = (event) => {
         event.preventDefault();
-
-        const newRecipe = {
-            id: id || new Date().getTime().toString(), // Generate a new ID or use the provided ID for editing
-            title,
+    
+        const recipeData = {
+            id: id || new Date().getTime().toString(),
+            name,
             ingredients,
             instructions,
-            imageUrl,
+            image,
+            cookTimeMinutes,  // Changed to cookTimeMinutes
         };
-
-        let recipes = JSON.parse(localStorage.getItem('recipes')) || [];
-
+    
         if (id) {
-            // Update existing recipe
-            recipes = recipes.map((recipe) =>
-                recipe.id === id ? newRecipe : recipe
-            );
+            updateMyRecipe(recipeData); 
         } else {
-            // Add new recipe
-            recipes.push(newRecipe);
+            addMyRecipe(recipeData); 
         }
-
-        // Save to localStorage
-        localStorage.setItem('recipes', JSON.stringify(recipes));
-
-        navigate('/profile'); 
+    
+        navigate('/profile');
     };
 
     return (
@@ -63,13 +57,13 @@ const AddRecipe = () => {
                     <div className="card-body">
                         <form onSubmit={handleSubmit}>
                             <div className="form-group mb-2">
-                                <label className="form-label">Title</label>
+                                <label className="form-label">Name</label>
                                 <input
                                     type="text"
-                                    placeholder="Enter recipe title"
-                                    value={title}
+                                    placeholder="Enter recipe name"
+                                    value={name}
                                     className="form-control bg-dark text-light border-light"
-                                    onChange={(event) => setTitle(event.target.value)}
+                                    onChange={(event) => setName(event.target.value)} 
                                 />
                             </div>
 
@@ -96,20 +90,37 @@ const AddRecipe = () => {
                             </div>
 
                             <div className="form-group mb-2">
-                                <label className="form-label">Image URL</label>
+                                <label className="form-label">Cooking Time (in minutes)</label> {/* Updated label */}
+                                <input
+                                    type="number"
+                                    placeholder="Enter cooking time"
+                                    value={cookTimeMinutes}
+                                    className="form-control bg-dark text-light border-light"
+                                    onChange={(event) => setCookTimeMinutes(event.target.value)}  // Updated event handler
+                                />
+                            </div>
+
+
+                            <div className="form-group mb-2">
+                                <label className="form-label">Image (url)</label>
                                 <input
                                     type="text"
                                     placeholder="Enter image URL"
-                                    value={imageUrl}
+                                    value={image}
                                     className="form-control bg-dark text-light border-light"
-                                    onChange={(event) => setImageUrl(event.target.value)}
+                                    onChange={(event) => setImage(event.target.value)}
                                 />
+                                {image && (
+                                    <div className="mt-2">
+                                        <img src={image} alt="Recipe" style={{ maxWidth: '100%', height: 'auto' }} />
+                                    </div>
+                                )}
                             </div>
 
                             <button
                                 type="submit"
                                 className="btn btn-primary"
-                                disabled={!title.trim() || !ingredients.trim() || !instructions.trim() || !imageUrl.trim()}
+                                disabled={!name.trim() || !ingredients.trim() || !instructions.trim() || !image.trim() || !cookTimeMinutes.trim()}
                             >
                                 Submit
                             </button>
@@ -121,4 +132,4 @@ const AddRecipe = () => {
     );
 };
 
-export default AddRecipe;
+export default RecipeForm;

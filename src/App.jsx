@@ -7,23 +7,29 @@ import NavBar from "./components/NavBar";
 import RecipeDetail from './pages/RecipeDetail'; 
 import AuthPage from "./pages/Login";
 import { AuthProvider, useAuth } from "./contexts/AuthContext";
-import AddRecipe from "./pages/RecipeForm";
+import RecipeForm from "./pages/RecipeForm";
+import { MyRecipesProvider } from "./contexts/MyRecipesContext";
+import MyRecipes from "./pages/MyRecipes";
 
 function App() {
   return (
     <AuthProvider>
       <RecipeProvider>
+      <MyRecipesProvider>
         <NavBar />
         <main className="main-content">
           <Routes>
             <Route path="/" element={<PrivateRoute><Home /></PrivateRoute>} />
             <Route path="/favorites" element={<PrivateRoute><Favorites /></PrivateRoute>} />
+            <Route path="/add" element={<PrivateRoute><RecipeForm /></PrivateRoute>} />
+            <Route path="/update/:id" element={<PrivateRoute><RecipeForm /></PrivateRoute>} />
+            <Route path="/profile" element={<PrivateRoute><MyRecipes /></PrivateRoute>} />
             <Route path="/login" element={<AuthRedirect />}/>
-            <Route path="/add" element={<AddRecipe />}/>
             <Route path="/recipe/:id" element={<PrivateRoute><RecipeDetail /></PrivateRoute>} />
 
           </Routes>
         </main>
+        </MyRecipesProvider>
       </RecipeProvider>
     </AuthProvider>
   );
