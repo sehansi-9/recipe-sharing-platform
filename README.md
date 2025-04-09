@@ -74,6 +74,10 @@ Welcome to **Recipe Hub** – the ultimate recipe app that brings you a world of
    ```bash
    git clone https://github.com/sehansi-9/recipe-sharing-platform.git
    ```
+2. Navigate to the project folder:
+   ```bash
+   cd recipe-sharing-platform
+   ```
 2. Install the dependencies:
    ```bash
    npm install
