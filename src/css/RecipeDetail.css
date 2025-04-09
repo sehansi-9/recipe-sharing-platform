@@ -124,6 +124,14 @@
   background-color: #1ebe5d;
 }
 
+.share-btn.print {
+  background-color: #505853;
+}
+
+.share-btn.print:hover {
+  background-color: #47534c;
+}
+
 .social-share {
   margin-top: 1.5rem;
   display: flex;
@@ -200,3 +208,26 @@
 .timer-controls button:active {
   background-color: #8a8787;
 }
+
+@media print {
+  body * {
+    visibility: hidden;
+  }
+
+  .recipe-detail-wrapper,
+  .recipe-detail-wrapper * {
+    visibility: visible;
+  }
+
+  .recipe-detail-wrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+  }
+  .social-share, .timer-wrapper, .recipe-overlay{
+    display: none !important;
+  }
+ 
+}
+

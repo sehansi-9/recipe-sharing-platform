@@ -134,7 +134,7 @@ function RecipeDetail() {
             )}
 
             <h2>Instructions</h2>
-           
+
             {Array.isArray(recipe.instructions) ? (
               <ul>
                 {recipe.instructions.map((instruction, index) => (
@@ -142,7 +142,7 @@ function RecipeDetail() {
                 ))}
               </ul>
             ) : (
-              <p>{recipe.instructions}</p> 
+              <p>{recipe.instructions}</p>
             )}
 
             <div className="social-share">
@@ -164,6 +164,13 @@ function RecipeDetail() {
                 onClick={() => alert("Shared on WhatsApp!")}
               >
                 WhatsApp
+              </button>
+              <button
+                className="share-btn print"
+                onClick={() => window.print()}
+                title="Print this page"
+              >
+                Print
               </button>
             </div>
             <br></br>
