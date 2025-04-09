@@ -16,10 +16,20 @@ function AuthPage() {
     let userData = { username, password };
 
     // Validation for Login and Sign-Up
-    if (!username || !password) {
-      alert("Please fill all fields.");
-      return;
+    if(isLogin){
+      if (!username || !password) {
+        alert("Please fill all fields.");
+        return;
+      }
     }
+    else{
+      const email = e.target.email.value;
+      if (!username || !email || !password) {
+        alert("Please fill all fields.");
+        return;
+      }
+    }
+   
 
     
     localStorage.setItem("user", JSON.stringify(userData)); // Store username and password in localStorage
