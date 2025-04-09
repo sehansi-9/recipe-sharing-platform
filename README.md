@@ -18,7 +18,7 @@ Welcome to **Recipe Hub** – the ultimate recipe app that brings you a world of
 - **User Recipe Management**: Add, update, and delete your own recipes. 📝
 - **Local Storage**: User details, favorite meals, and personal recipes are stored in the browser's local storage. 💾
 - **React Router**: Smooth navigation throughout the app using React Router. 🌐
-- **Context API**: Manage global state like user data and favorite recipes. ⚡
+- **Context API**: Manage global states, such as user data and favorite recipes. ⚡
 - **Bootstrap**: Fully responsive design with Bootstrap for a clean, modern look. 💎
 
 ---
@@ -28,12 +28,19 @@ Welcome to **Recipe Hub** – the ultimate recipe app that brings you a world of
 - **React**: For building the UI with reusable components.
 - **Bootstrap**: To make the app fully responsive and stylish.
 - **React Router**: For seamless navigation between pages.
-- **Context API**: To manage global state for user data and favorite recipes.
+- **Context API**: To manage the global state for user data and favorite recipes.
 - **LocalStorage**: To persist user data and preferences.
 - **Mock JSON API**: For fetching recipe data. <https://dummyjson.com/docs/recipes>
 - **CSS**: For custom styling and making the app visually appealing.
 
 ---
+## Flow
+- User logins/signs up (The site blocks all routes and directs to auth page if no user credentials are available in local storage)
+- Unfilled fields during auth process are instantly alerted
+- User data, user favourites, and new recipes added by the user are stored in local storage; deleting and updating the added recipes are instantly updated in the local storage
+- Error messages are displayed if fetching from API fails
+- The logout button clears user data from local storage and redirects to auth page, blocking all routes.
+
 ## Screenshots 📸
 
 ### Home Page with search bar
