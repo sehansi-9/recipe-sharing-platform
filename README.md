@@ -87,4 +87,4 @@ Welcome to **Recipe Hub** – the ultimate recipe app that brings you a world of
    npm run dev
    ```
  ---
-Now, you can open your browser and visit localhost to check out the Recipe Hub! 🎉
+Now, you can open your browser and visit (http://localhost:3000) to check out the Recipe Hub! 🎉
