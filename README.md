@@ -1,29 +1,29 @@
 # Recipe Hub 🍽️ by Sehansi Perera
 
-Welcome to **Recipe Hub** – the ultimate recipe app that brings you a world of culinary delights! With an easy-to-use interface, you can browse, filter, and favorite your favorite recipes, and even share them with your friends! Whether you're a seasoned chef or just getting started in the kitchen, Recipe Hub has everything you need. 🌟
+Welcome to **Recipe Hub** – the ultimate recipe app that brings you a world of culinary delights! With an easy-to-use interface, you can browse, filter, and favorite your favorite recipes, and even share them with your friends! Whether you're a seasoned chef or just getting started in the kitchen, Recipe Hub has everything you need. 
 
 ---
 
-## Features 🚀
+## Features 
 
-- **Home Page**: Displays all available recipes from a mock dummy JSON API. 📜
-- **Recipe Filtering**: Easily filter recipes by meal type like Chicken 🍗, Vegetarian 🥦, Meat 🍖, etc.
-- **Search Bar**: Find your favorite recipes by searching for ingredients or meal names. 🔍
-- **Favorites**: Save your favorite recipes and access them easily via the "Favorites" tab on the navbar. ❤️
-- **Recipe Details**: Clicking on a recipe takes you to a detailed page showing ingredients, step-by-step instructions, and a timer. ⏲️
-- **Interactive Timer**: Track your meal prep time for better kitchen management. ⏳
-- **Social Sharing**: Share your recipes on social media platforms like Twitter, Facebook, and WhatsApp. 📱
-- **Interactive Rating System**: Add your rating to your favourite recipes🌟
-- **Printable Recipes**: Easily get your favourite recipes in print format 🖨
-- **User Recipe Management**: Add, update, and delete your own recipes. 📝
-- **Local Storage**: User details, favorite meals, and personal recipes are stored in the browser's local storage. 💾
-- **React Router**: Smooth navigation throughout the app using React Router. 🌐
-- **Context API**: Manage global states, such as user data and favorite recipes. ⚡
-- **Bootstrap**: Fully responsive design with Bootstrap for a clean, modern look. 💎
+- **Home Page**: Displays all available recipes from a mock dummy JSON API. 
+- **Recipe Filtering**: Easily filter recipes by meal type like Chicken, Vegetarian, etc.
+- **Search Bar**: Find your favorite recipes by searching for ingredients or meal names. 
+- **Favorites**: Save your favorite recipes and access them easily via the "Favorites" tab on the navbar. 
+- **Recipe Details**: Clicking on a recipe takes you to a detailed page showing ingredients, step-by-step instructions, and a timer. 
+- **Interactive Timer**: Track your meal prep time for better kitchen management. 
+- **Social Sharing**: Share your recipes on social media platforms like Twitter, Facebook, and WhatsApp. 
+- **Interactive Rating System**: Add your rating to your favourite recipes
+- **Printable Recipes**: Easily get your favourite recipes in print format 
+- **User Recipe Management**: Add, update, and delete your own recipes. 
+- **Local Storage**: User details, favorite meals, and personal recipes are stored in the browser's local storage. 
+- **React Router**: Smooth navigation throughout the app using React Router. 
+- **Context API**: Manage global states, such as user data and favorite recipes. 
+- **Bootstrap**: Fully responsive design with Bootstrap for a clean, modern look. 
 
 ---
 
-## Tech Stack 🛠️
+## Tech Stack 
 
 - **React**: For building the UI with reusable components.
 - **Bootstrap**: To make the app fully responsive and stylish.
@@ -41,7 +41,7 @@ Welcome to **Recipe Hub** – the ultimate recipe app that brings you a world of
 - Error messages are displayed if fetching from API fails
 - The logout button clears user data from local storage and redirects to auth page, blocking all routes.
 
-## Screenshots 📸
+## Screenshots 
 
 ### Home Page with search bar
 ![Home Page with search bar](https://github.com/user-attachments/assets/2cdece7b-5eb8-4053-8065-f1d58f6bb7be)
@@ -58,7 +58,7 @@ Welcome to **Recipe Hub** – the ultimate recipe app that brings you a world of
 
 ---
 
-## Folder Structure 📁
+## Folder Structure 
 
 ```plaintext
 /src
@@ -68,7 +68,7 @@ Welcome to **Recipe Hub** – the ultimate recipe app that brings you a world of
   ├── /pages        # Pages such as Home, RecipeDetails, Favorites, etc.
   └── /services     # Fetching data from the Mock API.
 ```
-## How to Run the App 🏃‍♀️🏃‍♂️
+## How to Run the App 
 
 1. Clone the repository:
    ```bash
@@ -83,4 +83,4 @@ Welcome to **Recipe Hub** – the ultimate recipe app that brings you a world of
    npm run dev
    ```
  ---
-Now, you can open your browser and visit (http://localhost:3000) to check out the Recipe Hub! 🎉
+Now, you can open your browser and visit (http://localhost:3000) to check out the Recipe Hub! 
