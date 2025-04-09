@@ -10,6 +10,8 @@ function RecipeDetail() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const [timer, setTimer] = useState(0);
+  const [userRating, setUserRating] = useState(0);
+  const [hoverRating, setHoverRating] = useState(0);
   const [isRunning, setIsRunning] = useState(false);
   const { isFavorite, addToFavorites, removeFromFavorites } =
     useRecipeContext();
@@ -104,6 +106,28 @@ function RecipeDetail() {
                 Cooking Time: {recipe.cookTimeMinutes} mins
               </h3>
               <h3 className="recipe-facts">Rating: {recipe.rating} ⭐</h3>
+              
+              <div className="interactive-rating">
+                <h3 className="rating-label">Your Rating:&nbsp;</h3>
+                {[1, 2, 3, 4, 5].map((star) => (
+                  <span
+                    key={star}
+                    onClick={() => setUserRating(star)}
+                    onMouseEnter={() => setHoverRating(star)}
+                    onMouseLeave={() => setHoverRating(0)}
+                    style={{
+                      cursor: "pointer",
+                      color:
+                        (hoverRating || userRating) >= star
+                          ? "#FFD700"
+                          : "#ccc",
+                      fontSize: "1.5rem",
+                    }}
+                  >
+                    ★
+                  </span>
+                ))}
+              </div>
             </div>
           </div>
 

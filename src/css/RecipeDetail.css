@@ -225,9 +225,19 @@
     left: 0;
     width: 100%;
   }
-  .social-share, .timer-wrapper, .recipe-overlay{
+  .social-share, .timer-wrapper, .recipe-overlay, .interactive-rating {
     display: none !important;
   }
  
+}
+.interactive-rating {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.rating-label {
+  margin: 0; 
+  color: #fff;
 }
 
