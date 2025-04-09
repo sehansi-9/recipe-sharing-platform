@@ -13,6 +13,7 @@ Welcome to **Recipe Hub** – the ultimate recipe app that brings you a world of
 - **Recipe Details**: Clicking on a recipe takes you to a detailed page showing ingredients, step-by-step instructions, and a timer. ⏲️
 - **Interactive Timer**: Track your meal prep time for better kitchen management. ⏳
 - **Social Sharing**: Share your recipes on social media platforms like Twitter, Facebook, and WhatsApp. 📱
+- **Printable Recipes**: Easily get your favourite recipes in print format 🖨
 - **User Recipe Management**: Add, update, and delete your own recipes. 📝
 - **Local Storage**: User details, favorite meals, and personal recipes are stored in the browser's local storage. 💾
 - **React Router**: Smooth navigation throughout the app using React Router. 🌐
@@ -37,7 +38,9 @@ Welcome to **Recipe Hub** – the ultimate recipe app that brings you a world of
 ### Home Page with search bar
 ![Home Page with search bar](https://github.com/user-attachments/assets/2cdece7b-5eb8-4053-8065-f1d58f6bb7be)
 ### Detailed Recipe Page with timer and social sharable options
-![Detailed Recipe Page](https://github.com/user-attachments/assets/416fdf21-a249-40fb-8ff3-b176dd01c647)
+![Detailed Recipe Page](https://github.com/user-attachments/assets/5a7d7cd7-6fd2-4e72-8c59-1c3b82d40404)
+### Printable Recipes
+![Printable Recipes](https://github.com/user-attachments/assets/9d79b1b6-fa2e-4d7c-b074-6e7df8686aaa)
 ### Adding a new recipe
 ![Adding a new recipe](https://github.com/user-attachments/assets/b63744af-7031-453f-9421-6240fbd3a01c)
 ### Added Recipes that are editable
